@@ -8,3 +8,6 @@ license = "MIT"
 
 [contracts.time-release-safe]
 path = "contracts/time-release-safe.clar"
+
+[contracts.beneficiary-safe]
+path = "contracts/beneficiary-safe.clar"
