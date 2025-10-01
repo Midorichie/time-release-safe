@@ -11,6 +11,7 @@
         (asserts! (is-eq (var-get owner) tx-sender) (err u100)) ;; only owner
         (asserts! (> unlock-at block-height) (err u101)) ;; must be future block
         (asserts! (> amount u0) (err u102)) ;; amount must be > 0
+        (asserts! (is-eq (var-get locked-amount) u0) (err u103)) ;; must withdraw old lock first
 
         ;; transfer funds from sender to contract
         (try! (stx-transfer? amount tx-sender (as-contract tx-sender)))
