@@ -1,0 +1,10 @@
+[project]
+name = "time-release-safe"
+authors = ["Hammed <hamsohood@gmail.com>"]
+description = "A decentralized time-release safe contract for long-term savings and inheritance"
+telemetry = true
+requirements = []
+license = "MIT"
+
+[contracts.time-release-safe]
+path = "contracts/time-release-safe.clar"
