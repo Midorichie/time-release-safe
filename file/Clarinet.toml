@@ -1,7 +1,7 @@
 [project]
 name = "time-release-safe"
 authors = ["Hammed <hamsohood@gmail.com>"]
-description = "A decentralized time-release safe contract for long-term savings and inheritance"
+description = "A decentralized time-release safe with inheritance and penalty features"
 telemetry = true
 requirements = []
 license = "MIT"
@@ -11,3 +11,6 @@ path = "contracts/time-release-safe.clar"
 
 [contracts.beneficiary-safe]
 path = "contracts/beneficiary-safe.clar"
+
+[contracts.multi-beneficiary-safe]
+path = "contracts/multi-beneficiary-safe.clar"

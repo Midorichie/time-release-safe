@@ -1,23 +1,31 @@
 # Decentralized Time-Release Safe (Clarity Smart Contracts)
 
-This project implements **time-lock safes** using Clarity on the Stacks blockchain.
+This project implements **time-lock safes** with inheritance and penalty features using Clarity on the Stacks blockchain.
 
 ---
 
-## Features
+## Contracts
+
 ### `time-release-safe.clar`
-- Owner can lock STX until a specified future block height.
-- Only the owner can withdraw after unlock.
-- Prevents multiple overlapping locks.
+- Owner locks STX until a future block height.
+- Only owner can withdraw after unlock.
+- Prevents overlapping locks.
 
 ### `beneficiary-safe.clar`
-- Adds support for a **beneficiary** (inheritance use case).
-- Owner sets a beneficiary at lock time.
-- After unlock, either the **owner** or **beneficiary** can withdraw.
+- Adds support for **one beneficiary**.
+- After unlock, either owner or beneficiary can withdraw.
+
+### `multi-beneficiary-safe.clar`
+- Supports **multiple beneficiaries with percentage shares**.
+- If withdrawn before unlock:
+  - Owner can withdraw early but pays a penalty (default: 10%).
+- If withdrawn after unlock:
+  - Funds are automatically distributed among beneficiaries based on their shares.
 
 ---
 
 ## Setup
+
 1. Install [Clarinet](https://docs.hiro.so/clarity/clarinet).
 2. Run checks:
    ```bash
